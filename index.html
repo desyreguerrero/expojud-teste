@@ -166,6 +166,8 @@
         
         .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(30,30,30,0.7); backdrop-filter: blur(5px); animation: fadeIn 0.3s ease-out; }
         .modal-content { background-color: var(--bg-page); margin: 5vh auto; padding: var(--space-lg); border-radius: var(--border-radius); border: 1px solid var(--stroke); width: 90%; max-width: 500px; position: relative; animation: slideIn 0.4s ease-out; }
+        .modal-icon { text-align: center; margin-bottom: var(--space-sm); }
+        .modal-icon .material-symbols-outlined { font-size: 3rem; color: var(--brand-accent); }
         .modal-content h3 { color: var(--brand-primary); text-align: center; }
         .modal-content p { text-align: center; margin-bottom: var(--space-md); }
         .lead-form .input-group { margin-bottom: var(--space-sm); }
@@ -231,9 +233,7 @@
         .site-footer {
             background-color: var(--bg-soft);
             padding: var(--space-lg) 0;
-            margin-top: var(--space-xl);
             font-size: 0.9rem;
-            border-top: 1px solid var(--stroke);
         }
         .footer-content {
             display: flex;
@@ -295,13 +295,13 @@
             }
         }
         
-        @media (min-width: 1200px) { /* Increased breakpoint for 4 columns */
-            .results-grid, .benefits-grid, .features-section-grid {
+        @media (min-width: 1200px) {
+            .results-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
 
-        @media (max-width: 859px) { /* Corresponds to hero grid change */
+        @media (max-width: 859px) { 
             #hero {
                 text-align: center;
             }
@@ -311,7 +311,7 @@
             }
         }
 
-        @media (max-width: 767px) { /* Adjusted breakpoint */
+        @media (max-width: 767px) { 
             .impact-table-header { display: none; }
             .impact-table-row { grid-template-columns: 1fr; text-align: center; }
             .table-cell.task-name { text-align: center; font-family: var(--font-heading); font-weight: 700; margin-bottom: var(--space-xs); font-size: 1.1rem; }
@@ -522,7 +522,10 @@
 
     <div id="lead-form-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span><h3>SUA REVOLUÇÃO COMEÇA AGORA</h3><p>Preencha para visualizar seu relatório de impacto e descobrir como podemos transformar sua instituição.</p>
+            <span class="close-btn">&times;</span>
+            <div class="modal-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+            <h3>SUA REVOLUÇÃO COMEÇA AGORA</h3>
+            <p>Preencha para visualizar seu relatório de impacto e descobrir como podemos transformar sua instituição.</p>
             <form id="lead-form" class="lead-form">
                 <div class="input-group"><label for="name">Nome Completo</label><input type="text" id="name" required></div>
                 <div class="input-group"><label for="role">Cargo</label><input type="text" id="role" required></div>
